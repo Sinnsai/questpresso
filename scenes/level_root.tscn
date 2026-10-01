@@ -1,8 +1,10 @@
 [gd_scene format=4 uid="uid://c3xyq3lw75w23"]
 
 [ext_resource type="Texture2D" uid="uid://dksfpbcs5sgu8" path="res://assets/images/Tilemap/tilesheet.png" id="1_6btx5"]
+[ext_resource type="Script" uid="uid://si1p5mgou2mj" path="res://scenes/level_root.gd" id="1_ssdv0"]
 [ext_resource type="PackedScene" uid="uid://dv304mi3miyvu" path="res://scenes/player.tscn" id="2_ckirh"]
 [ext_resource type="PackedScene" uid="uid://chi3tiwt5gb55" path="res://scenes/breakbox.tscn" id="3_w3gk0"]
+[ext_resource type="PackedScene" uid="uid://csvnn005yrf7o" path="res://door.tscn" id="5_cseeo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t3vdb"]
 texture = ExtResource("1_6btx5")
@@ -134,6 +136,7 @@ sources/0 = SubResource("TileSetAtlasSource_t3vdb")
 
 [node name="LevelRoot" type="Node2D" unique_id=972910997]
 scale = Vector2(2, 2)
+script = ExtResource("1_ssdv0")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2080610014]
 texture_filter = 1
@@ -145,4 +148,7 @@ z_index = 1
 position = Vector2(41, 303.5)
 
 [node name="fusebox" parent="." unique_id=1340935745 instance=ExtResource("3_w3gk0")]
-position = Vector2(153.5, 295)
+position = Vector2(151.5, 296)
+
+[node name="Door" parent="." unique_id=1002253811 instance=ExtResource("5_cseeo")]
+position = Vector2(514, 291.5)

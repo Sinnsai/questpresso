@@ -24,7 +24,7 @@ hframes = 2
 shape = SubResource("RectangleShape2D_mbagn")
 
 [node name="Interactable" parent="." unique_id=580192322 instance=ExtResource("3_fpvas")]
-interact_name = "destroy fusebox"
+interact_name = "E"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=1183974674]
 shape = SubResource("CircleShape2D_mbagn")
