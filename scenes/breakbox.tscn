@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://chi3tiwt5gb55"]
+
+[ext_resource type="Script" uid="uid://cp888uwvirsft" path="res://scenes/breakbox.gd" id="1_hswp8"]
+[ext_resource type="PackedScene" uid="uid://bj8ar2q6cwcl7" path="res://interactable.tscn" id="3_fpvas"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mb83b"]
+load_path = "res://.godot/imported/purple1.png-29bbb72ea43406c1894737751a3e9555.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mbagn"]
+size = Vector2(14, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mbagn"]
+radius = 17.0
+
+[node name="fusebox" type="Area2D" unique_id=1340935745]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_hswp8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=638507163]
+texture_filter = 1
+texture = SubResource("CompressedTexture2D_mb83b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1124962795]
+shape = SubResource("RectangleShape2D_mbagn")
+
+[node name="Interactable" parent="." unique_id=580192322 instance=ExtResource("3_fpvas")]
+interact_name = "destroy fusebox"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=1183974674]
+shape = SubResource("CircleShape2D_mbagn")
