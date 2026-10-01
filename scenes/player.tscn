@@ -1,7 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://dv304mi3miyvu"]
+[gd_scene format=3 uid="uid://dv304mi3miyvu"]
 
 [ext_resource type="Texture2D" uid="uid://daam62nmimf2e" path="res://assets/images/player/player.png" id="1_a8voe"]
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_wauph"]
+[ext_resource type="Script" uid="uid://c6iufkbovltma" path="res://scripts/player.gd" id="1_wauph"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2lxdd"]
 atlas = ExtResource("1_a8voe")
@@ -94,7 +94,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bytlj")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -123,7 +123,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8q6cf")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk",
 "speed": 5.0
 }]
@@ -132,16 +132,42 @@ animations = [{
 radius = 11.0
 height = 28.0
 
-[node name="Player" type="CharacterBody2D"]
-position = Vector2(0, 1)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_px6ae"]
+size = Vector2(22, 30)
+
+[node name="Player" type="CharacterBody2D" unique_id=1994262041]
 script = ExtResource("1_wauph")
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=913579838]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_lul0h")
 animation = &"idle"
 autoplay = "idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=693835831]
 shape = SubResource("CapsuleShape2D_dmru4")
+
+[node name="HitBox" type="Area2D" parent="." unique_id=2027273970]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=446443599]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_px6ae")
+
+[node name="Label" type="Label" parent="HitBox" unique_id=446105631]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.011360143
+size_flags_horizontal = 4
+text = "E"
