@@ -1,5 +1,10 @@
 [gd_scene format=3 uid="uid://chi3tiwt5gb55"]
 
-[node name="breakbox" type="Area2D"]
+[ext_resource type="Script" uid="uid://cp888uwvirsft" path="res://scenes/breakbox.gd" id="1_hswp8"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="breakbox" type="Area2D" unique_id=1340935745]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_hswp8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=638507163]
