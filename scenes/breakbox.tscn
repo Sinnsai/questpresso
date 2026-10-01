@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://chi3tiwt5gb55"]
+
+[ext_resource type="Texture2D" uid="uid://b4y4o1mhu6yvs" path="res://assets/images/fuse_boxes/16x16/purple0.png" id="1_hswp8"]
+
+[node name="breakbox" type="Area2D" unique_id=670379267]
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=106592068]
+texture_filter = 1
+texture = ExtResource("1_hswp8")
