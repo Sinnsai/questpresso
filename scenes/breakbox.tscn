@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cp888uwvirsft" path="res://scenes/breakbox.gd" id="1_hswp8"]
 [ext_resource type="Texture2D" uid="uid://q8ymm02jd5jv" path="res://assets/images/fuse_boxes/colors/purple.png" id="2_y8v2i"]
-[ext_resource type="PackedScene" uid="uid://bj8ar2q6cwcl7" path="res://interactable.tscn" id="3_fpvas"]
+[ext_resource type="PackedScene" uid="uid://bj8ar2q6cwcl7" path="res://scenes/interactable.tscn" id="3_fpvas"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mbagn"]
 size = Vector2(14, 16)
