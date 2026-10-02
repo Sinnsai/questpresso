@@ -28,7 +28,14 @@ func _process(delta: float) -> void:
 		animated_sprite_2d.hide() 
 
 func turn_on():
-	has_energy = !has_energy
+	if has_energy:
+		has_energy = false
+		for body in get_overlapping_bodies():
+			_on_body_exited(body)
+	else:
+		has_energy = true
+		for body in get_overlapping_bodies():
+			_on_body_entered(body)
 
 #wenn player im wind steht und er aus angeschaltet wird, bekommt er keine windorce mehr außer er verlässt den bereich
 func _on_body_entered(body: Node2D) -> void: 
