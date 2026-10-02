@@ -7,7 +7,7 @@ var can_interact := true
 
 
 func _input(event: InputEvent) -> void:
-	if (event.is_action_pressed("interact") ) and can_interact:
+	if (event.is_action_pressed("interact2") ) and can_interact:
 		if current_interactions:
 			can_interact = false
 			interact_label.hide()
@@ -21,7 +21,7 @@ func _process(_delta: float) -> void:
 	if current_interactions and can_interact:
 		current_interactions.sort_custom(_sort_by_nearest)
 		if current_interactions[0].is_interactable:
-			interact_label.text = "e"
+			interact_label.text = "ctrl"
 			interact_label.show()
 	else:
 		interact_label.hide()

@@ -17,7 +17,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if has_energy:
-		animated_sprite_2d.show()
+		animated_sprite_2d.show() #vielleicht ist eine disapear animation besser
 		match length_in_tiles:
 			1: animated_sprite_2d.play("1")
 			2: animated_sprite_2d.play("2")
@@ -25,18 +25,18 @@ func _process(delta: float) -> void:
 			4: animated_sprite_2d.play("4")
 			5: animated_sprite_2d.play("5")
 	else:
-		animated_sprite_2d.hide()
+		animated_sprite_2d.hide() 
 
 func turn_on():
 	has_energy = !has_energy
 
 func _on_body_entered(body: Node2D) -> void:
-	if(body.is_in_group("player") and has_energy):
+	if((body.is_in_group("player") or body.is_in_group("player2")) and has_energy): #player zwei bekommt keine wind force, wiesoooo ? 
 		if body.has_method("set_wind_force"):
 			body.set_wind_force(wind_force)
 
 
 func _on_body_exited(body: Node2D) -> void:
-	if body.is_in_group("player"):
+	if (body.is_in_group("player") or body.is_in_group("player2")):
 		if body.has_method("set_wind_force"):
 			body.set_wind_force(Vector2.ZERO)

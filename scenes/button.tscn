@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cne4k6rdpgb4u"]
+
+[ext_resource type="Texture2D" uid="uid://bj7u8sddisms3" path="res://assets/images/animated/button.png" id="1_mi6dp"]
+
+[node name="button" type="Area2D" unique_id=1526610005]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2122183817]
+texture = ExtResource("1_mi6dp")
+hframes = 2
