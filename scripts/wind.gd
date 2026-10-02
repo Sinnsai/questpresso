@@ -30,13 +30,14 @@ func _process(delta: float) -> void:
 func turn_on():
 	has_energy = !has_energy
 
-func _on_body_entered(body: Node2D) -> void:
-	if((body.is_in_group("player") or body.is_in_group("player2")) and has_energy): #player zwei bekommt keine wind force, wiesoooo ? 
+#wenn player im wind steht und er aus angeschaltet wird, bekommt er keine windorce mehr außer er verlässt den bereich
+func _on_body_entered(body: Node2D) -> void: 
+	if(body.is_in_group("player") and has_energy): 
 		if body.has_method("set_wind_force"):
 			body.set_wind_force(wind_force)
 
 
 func _on_body_exited(body: Node2D) -> void:
-	if (body.is_in_group("player") or body.is_in_group("player2")):
+	if body.is_in_group("player"):
 		if body.has_method("set_wind_force"):
 			body.set_wind_force(Vector2.ZERO)

@@ -133,7 +133,7 @@ animations = [{
 radius = 11.0
 height = 28.0
 
-[node name="Player2" type="CharacterBody2D" unique_id=1994262041]
+[node name="Player2" type="CharacterBody2D" unique_id=1994262041 groups=["player"]]
 script = ExtResource("1_agjl5")
 metadata/_edit_group_ = true
 
