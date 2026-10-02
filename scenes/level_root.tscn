@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://csvnn005yrf7o" path="res://scenes/door.tscn" id="5_cseeo"]
 [ext_resource type="PackedScene" uid="uid://d25jkv7gg5cw8" path="res://scenes/wind.tscn" id="6_cseeo"]
 [ext_resource type="PackedScene" uid="uid://cwkjtbydsudf0" path="res://scenes/player2.tscn" id="7_arxld"]
+[ext_resource type="PackedScene" uid="uid://cne4k6rdpgb4u" path="res://scenes/button.tscn" id="8_3xth4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t3vdb"]
 texture = ExtResource("1_6btx5")
@@ -162,3 +163,6 @@ wind_force = Vector2(0, -2000)
 
 [node name="Player2" parent="." unique_id=1994262041 instance=ExtResource("7_arxld")]
 position = Vector2(255.5, 296.5)
+
+[node name="button" parent="." unique_id=1526610005 instance=ExtResource("8_3xth4")]
+position = Vector2(442, 319)

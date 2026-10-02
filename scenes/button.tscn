@@ -1,9 +1,24 @@
 [gd_scene format=3 uid="uid://cne4k6rdpgb4u"]
 
 [ext_resource type="Texture2D" uid="uid://bj7u8sddisms3" path="res://assets/images/animated/button.png" id="1_mi6dp"]
+[ext_resource type="Script" uid="uid://dw4wbo338avoc" path="res://scenes/button.gd" id="1_rhj8v"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u2cai"]
+radius = 9.974486
+height = 34.0199
 
 [node name="button" type="Area2D" unique_id=1526610005]
+script = ExtResource("1_rhj8v")
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2122183817]
 texture = ExtResource("1_mi6dp")
 hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=720634618]
+position = Vector2(0, -2.0000002)
+rotation = 4.700014
+shape = SubResource("CapsuleShape2D_u2cai")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
