@@ -5,6 +5,7 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+var current_wind_force: Vector2 = Vector2.ZERO
 
 
 func _physics_process(delta: float) -> void:
@@ -28,7 +29,9 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+	
+	velocity += current_wind_force * delta
+	
 	move_and_slide()
 	
 	
@@ -36,3 +39,6 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.flip_h = false
 	elif direction == -1.0:
 		animated_sprite_2d.flip_h = true
+
+func set_wind_force(force: Vector2) -> void:
+	current_wind_force = force
