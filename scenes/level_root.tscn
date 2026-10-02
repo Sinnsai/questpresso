@@ -155,6 +155,6 @@ position = Vector2(151.5, 296)
 position = Vector2(514, 291.5)
 
 [node name="wind" parent="." unique_id=1657574721 instance=ExtResource("6_cseeo")]
-position = Vector2(352, 310)
-length_in_tiles = 1
+position = Vector2(351.5, 307)
+length_in_tiles = 3
 wind_force = Vector2(0, -2000)
