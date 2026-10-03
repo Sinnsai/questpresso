@@ -134,6 +134,7 @@ texture = ExtResource("1_6btx5")
 3:15/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_wswbs"]
+occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_t3vdb")
 
@@ -152,6 +153,7 @@ z_index = 1
 position = Vector2(41, 303.5)
 
 [node name="fusebox" parent="." unique_id=1340935745 instance=ExtResource("3_w3gk0")]
+z_index = 0
 position = Vector2(151.5, 296)
 
 [node name="Door" parent="." unique_id=1002253811 instance=ExtResource("5_cseeo")]

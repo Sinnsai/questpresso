@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bnoqplx7w4kis" path="res://assets/images/animated/lights48x16.png" id="3_ky1i4"]
 
 [node name="light" type="PointLight2D" unique_id=424952006]
+shadow_enabled = true
 texture = ExtResource("1_hdgcg")
 texture_scale = 2.78
 script = ExtResource("2_we4ua")
