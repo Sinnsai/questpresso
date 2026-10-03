@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://c3xyq3lw75w23"]
 
 [ext_resource type="Texture2D" uid="uid://dksfpbcs5sgu8" path="res://assets/images/Tilemap/tilesheet.png" id="1_6btx5"]
-[ext_resource type="Script" uid="uid://si1p5mgou2mj" path="res://scenes/level_root.gd" id="1_ssdv0"]
+[ext_resource type="Script" uid="uid://si1p5mgou2mj" path="res://scripts/level_root.gd" id="1_ssdv0"]
 [ext_resource type="PackedScene" uid="uid://dv304mi3miyvu" path="res://scenes/player.tscn" id="2_ckirh"]
 [ext_resource type="PackedScene" uid="uid://chi3tiwt5gb55" path="res://scenes/breakbox.tscn" id="3_w3gk0"]
 [ext_resource type="PackedScene" uid="uid://csvnn005yrf7o" path="res://scenes/door.tscn" id="5_cseeo"]
@@ -137,7 +137,7 @@ texture = ExtResource("1_6btx5")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_t3vdb")
 
-[node name="LevelRoot" type="Node2D" unique_id=972910997]
+[node name="LevelRoot2" type="Node2D" unique_id=972910997]
 scale = Vector2(2, 2)
 script = ExtResource("1_ssdv0")
 
@@ -168,10 +168,8 @@ position = Vector2(255.5, 296.5)
 [node name="button" parent="." unique_id=1526610005 instance=ExtResource("8_3xth4")]
 position = Vector2(442, 319)
 
-[node name="PointLight2D" parent="." unique_id=424952006 instance=ExtResource("9_advu8")]
-position = Vector2(276.5, 8.000004)
-scale = Vector2(5.6345215, 4.6870117)
-height = 1024.0
-
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=2090886616]
 color = Color(0.23031491, 0.23031494, 0.23031488, 1)
+
+[node name="light" parent="." unique_id=424952006 instance=ExtResource("9_advu8")]
+position = Vector2(286.5, 21)

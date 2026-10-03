@@ -1,5 +1,6 @@
 extends PointLight2D
-@onready var point_light_2d: PointLight2D = $"."
+@onready var light: PointLight2D = $"."
+@onready var sprite_2d: Sprite2D = $Sprite2D
 
 
 
@@ -13,8 +14,10 @@ func _process(delta: float) -> void:
 	pass
 
 func turn_off() -> void:
-	point_light_2d.energy = 0
+	light.energy = 0
+	sprite_2d.frame -= 1
 	
 
 func turn_on() -> void:
-	point_light_2d.energy = 1
+	light.energy = 1
+	sprite_2d.frame += 1
