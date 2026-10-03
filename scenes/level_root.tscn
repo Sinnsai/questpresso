@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d25jkv7gg5cw8" path="res://scenes/wind.tscn" id="6_cseeo"]
 [ext_resource type="PackedScene" uid="uid://cwkjtbydsudf0" path="res://scenes/player2.tscn" id="7_arxld"]
 [ext_resource type="PackedScene" uid="uid://cne4k6rdpgb4u" path="res://scenes/button.tscn" id="8_3xth4"]
+[ext_resource type="PackedScene" uid="uid://dh13cq0smx5kf" path="res://scenes/light.tscn" id="9_advu8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t3vdb"]
 texture = ExtResource("1_6btx5")
@@ -24,7 +25,6 @@ texture = ExtResource("1_6btx5")
 0:1/0 = 0
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:1/0 = 0
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:1/0 = 0
 2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:1/0 = 0
@@ -166,3 +166,11 @@ position = Vector2(255.5, 296.5)
 
 [node name="button" parent="." unique_id=1526610005 instance=ExtResource("8_3xth4")]
 position = Vector2(442, 319)
+
+[node name="PointLight2D" parent="." unique_id=424952006 instance=ExtResource("9_advu8")]
+position = Vector2(276.5, 8.000004)
+scale = Vector2(5.6345215, 4.6870117)
+height = 1024.0
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=2090886616]
+color = Color(0.23031491, 0.23031494, 0.23031488, 1)
