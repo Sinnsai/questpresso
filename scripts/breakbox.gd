@@ -16,14 +16,19 @@ func _ready() -> void:
 
 
 func _on_interact():
-	toggle()
 	if active:
-		fuse_on.emit()
-		print("the fuse box is on")
-	else:
+		turn_off()
 		fuse_off.emit()
 		print("the fuse box is off")
+	else:
+		turn_on()
+		fuse_on.emit()
+		print("the fuse box is on")
 
-func toggle():
-	active = !active
+func turn_on():
+	active = true
+	sprite_2d.frame_coords.x = int(active)
+
+func turn_off():
+	active = false
 	sprite_2d.frame_coords.x = int(active)
