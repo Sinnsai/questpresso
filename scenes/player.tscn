@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://c6iufkbovltma" path="res://scripts/player.gd" id="1_wauph"]
 [ext_resource type="Texture2D" uid="uid://bdmxmotn5qrm" path="res://assets/images/player/idle1.png" id="2_dqkch"]
 [ext_resource type="PackedScene" uid="uid://ssftv2p8xlwu" path="res://scenes/interacting_component.tscn" id="3_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://cp015hvaseccw" path="res://assets/images/player/shadow.png" id="5_qlg0r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
 atlas = ExtResource("2_dqkch")
@@ -21,37 +22,37 @@ region = Rect2(64, 0, 32, 32)
 atlas = ExtResource("2_dqkch")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_g7h6i"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur7pv"]
 atlas = ExtResource("1_a8voe")
-region = Rect2(0, 59, 32, 50)
+region = Rect2(0, 66, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_q6iio"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4r1p"]
 atlas = ExtResource("1_a8voe")
-region = Rect2(32, 59, 32, 50)
+region = Rect2(32, 66, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rpcv5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2wvv"]
 atlas = ExtResource("1_a8voe")
-region = Rect2(64, 59, 32, 50)
+region = Rect2(64, 66, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1nwh7"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3v2ag"]
 atlas = ExtResource("1_a8voe")
-region = Rect2(96, 59, 32, 50)
+region = Rect2(96, 66, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6rjn4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jej6c"]
 atlas = ExtResource("1_a8voe")
-region = Rect2(128, 59, 32, 50)
+region = Rect2(128, 66, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ax5nm"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1ej7"]
 atlas = ExtResource("1_a8voe")
-region = Rect2(160, 59, 32, 50)
+region = Rect2(160, 66, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0638r"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_oprun"]
 atlas = ExtResource("1_a8voe")
-region = Rect2(192, 59, 32, 50)
+region = Rect2(192, 66, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8q6cf"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8ls1"]
 atlas = ExtResource("1_a8voe")
-region = Rect2(224, 59, 32, 50)
+region = Rect2(224, 66, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lul0h"]
 animations = [{
@@ -70,32 +71,32 @@ animations = [{
 }],
 "loop": 1,
 "name": &"idle",
-"speed": 6.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_g7h6i")
+"texture": SubResource("AtlasTexture_ur7pv")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_q6iio")
+"texture": SubResource("AtlasTexture_y4r1p")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rpcv5")
+"texture": SubResource("AtlasTexture_d2wvv")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1nwh7")
+"texture": SubResource("AtlasTexture_3v2ag")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6rjn4")
+"texture": SubResource("AtlasTexture_jej6c")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ax5nm")
+"texture": SubResource("AtlasTexture_f1ej7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0638r")
+"texture": SubResource("AtlasTexture_oprun")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8q6cf")
+"texture": SubResource("AtlasTexture_a8ls1")
 }],
 "loop": 1,
 "name": &"walk",
@@ -107,6 +108,8 @@ radius = 11.0
 height = 28.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1994262041]
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_wauph")
 metadata/_edit_group_ = true
 
@@ -115,9 +118,12 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_lul0h")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.076240376
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=693835831]
 shape = SubResource("CapsuleShape2D_dmru4")
 
 [node name="InteractingComponent" parent="." unique_id=1500029177 instance=ExtResource("3_qhqgy")]
+
+[node name="shadow" type="Sprite2D" parent="." unique_id=376953317]
+z_index = -1
+texture = ExtResource("5_qlg0r")

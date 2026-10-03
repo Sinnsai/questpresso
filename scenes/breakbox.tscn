@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://chi3tiwt5gb55"]
 
 [ext_resource type="Script" uid="uid://cp888uwvirsft" path="res://scenes/breakbox.gd" id="1_hswp8"]
-[ext_resource type="Texture2D" uid="uid://q8ymm02jd5jv" path="res://assets/images/fuse_boxes/colors/purple.png" id="2_y8v2i"]
+[ext_resource type="Texture2D" uid="uid://co6v3rxn8xhas" path="res://assets/images/fuse_boxes/all_colors.png" id="2_y8v2i"]
 [ext_resource type="PackedScene" uid="uid://bj8ar2q6cwcl7" path="res://scenes/interactable.tscn" id="3_fpvas"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mbagn"]
@@ -19,6 +19,7 @@ script = ExtResource("1_hswp8")
 texture_filter = 1
 texture = ExtResource("2_y8v2i")
 hframes = 2
+vframes = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1124962795]
 shape = SubResource("RectangleShape2D_mbagn")

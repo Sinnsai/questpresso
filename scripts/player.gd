@@ -1,5 +1,6 @@
 extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var shadow: Sprite2D = $shadow
 
 
 const SPEED = 300.0
@@ -17,6 +18,9 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+		shadow.visible = false
+	else:
+		shadow.visible = true
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():

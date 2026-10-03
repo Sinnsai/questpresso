@@ -1,29 +1,24 @@
-extends Area2D
+extends StaticBody2D
 
 @export_enum("Light Blue", "Purple", "Yellow", "Pink", "Blue", "Black", "Green", "Gray", "Orange", "White", "Red", "Bronze") var color: int
-@export var active = false
+@export var active = true
 
-@onready var interactable: Area2D = $Interactable
+@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
-var sig = 0
-signal fuse_on(sig)
-signal fuse_off(sig)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	interactable.interact = _on_interact
 	sprite_2d.frame_coords.x = int(active)
 	sprite_2d.frame_coords.y = color
+	collision_shape_2d.disabled = !active
 
-
-func _on_interact():
-	toggle()
-	if active:
-		fuse_on.emit()
-		print("the fuse box is on")
-	else:
-		fuse_off.emit()
-		print("the fuse box is off")
 
 func toggle():
 	active = !active
+	collision_shape_2d.disabled = !active
 	sprite_2d.frame_coords.x = int(active)
+	
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass

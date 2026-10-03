@@ -5,15 +5,18 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u2cai"]
 radius = 9.974486
-height = 34.0199
+height = 19.99847
 
 [node name="button" type="Area2D" unique_id=1526610005]
+collision_layer = 0
+collision_mask = 12
 script = ExtResource("1_rhj8v")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2122183817]
 texture = ExtResource("1_mi6dp")
 hframes = 2
+vframes = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=720634618]
 position = Vector2(0, -2.0000002)
