@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dh13cq0smx5kf"]
+
+[ext_resource type="Texture2D" uid="uid://c5rdq14ateclj" path="res://assets/images/animated/2d_lights_and_shadows_neutral_point_light.webp" id="1_hdgcg"]
+[ext_resource type="Script" uid="uid://dcgc0ysdet30v" path="res://scripts/light.gd" id="2_we4ua"]
+
+[node name="PointLight2D" type="PointLight2D" unique_id=424952006]
+scale = Vector2(2.3789063, 1.6328125)
+texture = ExtResource("1_hdgcg")
+height = 145.0
+script = ExtResource("2_we4ua")
