@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cp888uwvirsft" path="res://scenes/breakbox.gd" id="1_hswp8"]
 [ext_resource type="Texture2D" uid="uid://co6v3rxn8xhas" path="res://assets/images/fuse_boxes/all_colors.png" id="2_y8v2i"]
 [ext_resource type="PackedScene" uid="uid://bj8ar2q6cwcl7" path="res://scenes/interactable.tscn" id="3_fpvas"]
+[ext_resource type="Texture2D" uid="uid://bffv0ad0acot6" path="res://assets/images/fuse_boxes/base.png" id="4_fpvas"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mbagn"]
 size = Vector2(14, 16)
@@ -30,3 +31,7 @@ interact_name = "E"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=1183974674]
 shape = SubResource("CircleShape2D_mbagn")
+
+[node name="base" type="Sprite2D" parent="." unique_id=322624800]
+texture = ExtResource("4_fpvas")
+offset = Vector2(0, 16)
