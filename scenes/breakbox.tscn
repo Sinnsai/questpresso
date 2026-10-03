@@ -11,6 +11,7 @@ size = Vector2(14, 16)
 radius = 17.0
 
 [node name="fusebox" type="Area2D" unique_id=1340935745]
+z_index = -10
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_hswp8")
