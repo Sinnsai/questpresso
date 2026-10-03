@@ -2,9 +2,15 @@
 
 [ext_resource type="Texture2D" uid="uid://c5rdq14ateclj" path="res://assets/images/animated/2d_lights_and_shadows_neutral_point_light.webp" id="1_hdgcg"]
 [ext_resource type="Script" uid="uid://dcgc0ysdet30v" path="res://scripts/light.gd" id="2_we4ua"]
+[ext_resource type="Texture2D" uid="uid://bnoqplx7w4kis" path="res://assets/images/animated/lights48x16.png" id="3_ky1i4"]
 
-[node name="PointLight2D" type="PointLight2D" unique_id=424952006]
-scale = Vector2(2.3789063, 1.6328125)
+[node name="light" type="PointLight2D" unique_id=424952006]
 texture = ExtResource("1_hdgcg")
-height = 145.0
+texture_scale = 2.78
 script = ExtResource("2_we4ua")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=974149360]
+texture = ExtResource("3_ky1i4")
+hframes = 2
+vframes = 12
+frame = 1
