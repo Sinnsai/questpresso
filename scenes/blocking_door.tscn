@@ -6,6 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dxm0x"]
 size = Vector2(14, 48)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_mbagn"]
+polygon = PackedVector2Array(-7, -24, 7, -24, 7, 24, -7, 24)
+
 [node name="blocking_door" type="StaticBody2D" unique_id=1293813111]
 z_index = -7
 collision_mask = 0
@@ -18,3 +21,7 @@ vframes = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1693232877]
 shape = SubResource("RectangleShape2D_dxm0x")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=127884304]
+occluder = SubResource("OccluderPolygon2D_mbagn")
+sdf_collision = false
