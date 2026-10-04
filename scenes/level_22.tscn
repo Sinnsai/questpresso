@@ -525,7 +525,7 @@ z_index = 1
 position = Vector2(214, 300)
 
 [node name="Player2" parent="." unique_id=136275208 groups=["player2"] instance=ExtResource("3_kcvjt")]
-position = Vector2(328, 303)
+position = Vector2(328, 301)
 
 [node name="Door" parent="." unique_id=1002253811 instance=ExtResource("4_1t22r")]
 z_index = -2
@@ -563,7 +563,7 @@ range_item_cull_mask = 2
 texture = ExtResource("6_3edcp")
 
 [node name="blocking_door" parent="." unique_id=1293813111 instance=ExtResource("7_jj8rx")]
-position = Vector2(119, 295)
+position = Vector2(120, 296)
 color = 4
 active = false
 
@@ -573,14 +573,14 @@ color = 4
 
 [node name="wind" parent="." unique_id=1657574721 instance=ExtResource("8_d0gjc")]
 position = Vector2(547, 120.000015)
-rotation = -1.6008447
+rotation = -1.5707964
 length_in_tiles = 13
 color = 1
 wind_force = Vector2(-99999, 0)
 
 [node name="wind3" parent="." unique_id=810417975 instance=ExtResource("8_d0gjc")]
 position = Vector2(547.00006, 69.00001)
-rotation = -1.6008447
+rotation = -1.5707964
 length_in_tiles = 13
 color = 1
 wind_force = Vector2(-99999, 0)
@@ -592,7 +592,7 @@ color = 1
 wind_force = Vector2(0, -2000)
 
 [node name="fusebox" parent="." unique_id=1340935745 instance=ExtResource("9_3edcp")]
-position = Vector2(505, 98)
+position = Vector2(496, 93)
 color = 4
 
 [node name="button" parent="." unique_id=1526610005 instance=ExtResource("10_a3bxh")]
@@ -600,7 +600,7 @@ position = Vector2(265, 311)
 color = 1
 
 [node name="fusebox2" parent="." unique_id=331952158 instance=ExtResource("9_3edcp")]
-position = Vector2(86, 292)
+position = Vector2(86, 285)
 color = 4
 
 [node name="voice" type="AudioStreamPlayer2D" parent="." unique_id=255750404]

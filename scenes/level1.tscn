@@ -603,7 +603,6 @@ color = 4
 wind_force = Vector2(0, -2000)
 
 [node name="fusebox_black" parent="." unique_id=1649822758 instance=ExtResource("3_conm7")]
-visible = false
 position = Vector2(387, 286)
 color = 5
 
