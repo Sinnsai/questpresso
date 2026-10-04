@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://cdio0upqrs68q" path="res://scripts/level_cake.gd" id="2_xdqsi"]
 [ext_resource type="Texture2D" uid="uid://d3ivblrx3rl2r" path="res://assets/images/cake.png" id="3_xdqsi"]
 [ext_resource type="AudioStream" uid="uid://13c8083nrpuy" path="res://assets/sounds/Ende.mp3" id="5_swafk"]
+[ext_resource type="AudioStream" uid="uid://xtui5ed2dd7d" path="res://assets/sounds/Pufino__Enjoy_(freetouse.com).mp3" id="6_swafk"]
 
 [node name="level_cake" unique_id=2110850906 instance=ExtResource("1_5c7uh")]
 scale = Vector2(3, 3)
@@ -76,3 +77,7 @@ texture = ExtResource("3_xdqsi")
 [node name="kuchen_line" type="AudioStreamPlayer2D" parent="." index="14" unique_id=1616799020]
 stream = ExtResource("5_swafk")
 bus = &"voice_lines"
+
+[node name="music" type="AudioStreamPlayer2D" parent="." index="15" unique_id=1234704063]
+stream = ExtResource("6_swafk")
+bus = &"musik"
