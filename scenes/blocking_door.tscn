@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://le7coicdw50d" path="res://assets/images/animated/blocking_doors.png" id="1_6rqoh"]
 [ext_resource type="Script" uid="uid://bgnxtl6sn6rcr" path="res://scripts/blocking_door.gd" id="1_guu3x"]
+[ext_resource type="AudioStream" uid="uid://ci8wutdb21slw" path="res://assets/sounds/doorchange.wav" id="3_rddhk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dxm0x"]
 size = Vector2(14, 48)
@@ -26,3 +27,7 @@ shape = SubResource("RectangleShape2D_dxm0x")
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=1835483538]
 visible = false
 occluder = SubResource("OccluderPolygon2D_mbagn")
+
+[node name="sound" type="AudioStreamPlayer2D" parent="." unique_id=679459321]
+stream = ExtResource("3_rddhk")
+bus = &"sound_effects"

@@ -1,6 +1,7 @@
 extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var shadow: Sprite2D = $shadow
+@onready var footsteps: AudioStreamPlayer2D = $footsteps
 
 
 const SPEED = 300.0
@@ -13,6 +14,8 @@ func _physics_process(delta: float) -> void:
 	# Add animation
 	if velocity.x > 1 or velocity.x < -1:
 		animated_sprite_2d.animation = "walk"
+		if is_on_floor():
+			footsteps.play()
 	else:
 		animated_sprite_2d.animation = "idle"
 	# Add the gravity.
