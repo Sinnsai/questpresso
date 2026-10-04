@@ -1,6 +1,7 @@
 extends Area2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var interactable: Area2D = $Interactable
+@export var next_scene: String
 
 var open = false
 var player1 = false
@@ -16,14 +17,14 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if open and player1 and player2:
-		print("next level")
+	pass
+
 
 
 func _on_interact():
-	if open:
+	if open and player1 and player2:
 		print("next level")
-		#nächstes level laden
+		get_tree().change_scene_to_file(next_scene)
 
 
 func open_door():
@@ -49,11 +50,9 @@ func close_door():
 
 
 func _on_body_entered(body: Node2D) -> void:
-	print("player1")
 	if body.is_in_group("player1"):
 		player1 = true
-		print("player1")
-	else:
+	if body.is_in_group("player2"):
 		player2 = true
 
 
@@ -61,5 +60,5 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player1"):
 		player1 = false
-	else:
+	if body.is_in_group("player2"):
 		player2 = false
