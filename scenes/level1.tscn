@@ -622,12 +622,6 @@ energy = 0.85
 shadow_filter = 1
 texture_scale = 1.44
 
-[node name="light3" parent="." unique_id=1461711101 instance=ExtResource("10_d3jkd")]
-position = Vector2(182, 24)
-energy = 0.71
-shadow_filter = 1
-texture_scale = 1.44
-
 [node name="light4" parent="." unique_id=1658862894 instance=ExtResource("10_d3jkd")]
 position = Vector2(502, 24)
 energy = 0.71
@@ -700,5 +694,6 @@ stream = ExtResource("14_gnai3")
 bus = &"musik"
 
 [node name="pause_menu" parent="." unique_id=78249144 instance=ExtResource("15_i8kv5")]
+visible = false
 
 [connection signal="body_entered" from="voice_trigger" to="." method="_on_voice_trigger_body_entered"]
