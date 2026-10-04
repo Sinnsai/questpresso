@@ -586,5 +586,6 @@ color = Color(0.21682696, 0.21526307, 0.23112327, 1)
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1105212185]
 position = Vector2(263, 170)
 scale = Vector2(3.5, 2.703125)
+color = Color(0.78602254, 0.9593647, 0.9987505, 1)
 range_item_cull_mask = 2
 texture = ExtResource("11_u3awl")
