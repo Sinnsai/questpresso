@@ -30,7 +30,11 @@ visible = false
 position = Vector2(98, 194)
 
 [node name="light" parent="." index="6" unique_id=424952006]
-position = Vector2(190.66666, 24.666668)
+visible = false
+position = Vector2(88.00002, 23.666641)
+
+[node name="CanvasModulate" parent="." index="7" unique_id=2112920056]
+visible = false
 
 [node name="PointLight2D" parent="." index="8" unique_id=1105212185]
 visible = false
