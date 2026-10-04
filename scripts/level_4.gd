@@ -14,10 +14,18 @@ extends Node2D
 @onready var door_pink: Area2D = $door_pink
 @onready var fusebox_pink: Area2D = $fusebox_pink
 @onready var door_bronze: Area2D = $Door
+@onready var first_voice_line: AudioStreamPlayer2D = $first_voice_line
+
+var player1 = false
+var player2 = false
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	#first voice line
+	first_voice_line.play()
+	
+	
 	# light blue
 	button_lightblue.button_pressed.connect(wind_lightblue.turn_on)
 	button_lightblue.button_released.connect(wind_lightblue.turn_off)
@@ -49,4 +57,15 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if player1 and player2:
+		get_tree().change_scene_to_file(door_bronze.next_scene)
+
+
+func _on_door_pink_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player") and door_pink.open:
+		player1 = true
+
+
+func _on_door_body_entered(body: Node2D) -> void:
+		if body.is_in_group("player") and door_bronze.open:
+			player2 = true
