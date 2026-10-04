@@ -37,7 +37,7 @@ func turn_off():
 		_on_body_exited(body)
 
 
-#wenn player im wind steht und er aus angeschaltet wird, bekommt er keine windorce mehr außer er verlässt den bereich
+
 func _on_body_entered(body: Node2D) -> void: 
 	if(body.is_in_group("player") and has_energy): 
 		if body.has_method("set_wind_force"):

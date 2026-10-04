@@ -157,9 +157,11 @@ z_index = 0
 position = Vector2(151.5, 296)
 
 [node name="Door" parent="." unique_id=1002253811 instance=ExtResource("5_cseeo")]
+z_index = 0
 position = Vector2(514, 291.5)
 
 [node name="wind" parent="." unique_id=1657574721 instance=ExtResource("6_cseeo")]
+z_index = 0
 position = Vector2(351.5, 307)
 length_in_tiles = 3
 wind_force = Vector2(0, -2000)
