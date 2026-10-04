@@ -499,6 +499,7 @@ sources/0 = SubResource("TileSetAtlasSource_d3jkd")
 size = Vector2(264.5, 91)
 
 [node name="level2" type="Node2D" unique_id=2110850906]
+scale = Vector2(2, 2)
 script = ExtResource("1_3edcp")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1501176998]

@@ -10,6 +10,9 @@ var open = false
 var player1 = false
 var player2 = false
 
+var player1_interact = false
+var player2_interact = false
+
 signal door_open
 signal door_closed
 # Called when the node enters the scene tree for the first time.
@@ -21,7 +24,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if player1_interact and player2_interact:
+		print("next level")
+		get_tree().change_scene_to_file(next_scene)
 
 
 
@@ -29,6 +34,11 @@ func _on_interact():
 	if open and player1 and player2:
 		print("next level")
 		get_tree().change_scene_to_file(next_scene)
+	if open and player1:
+		player1_interact =true
+	if open and player2:
+		player2_interact =true
+
 
 
 func open_door():
