@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://mqxbr7co0lj2"]
 
 [ext_resource type="Script" uid="uid://btw0simixs467" path="res://options.gd" id="1_5v8ap"]
+[ext_resource type="Texture2D" uid="uid://8mipd4nrkkhv" path="res://assets/images/back_button.png" id="2_07a1d"]
+[ext_resource type="Script" uid="uid://bqa0g4ytm4jed" path="res://texture_button.gd" id="3_p8250"]
+[ext_resource type="Texture2D" uid="uid://uk73nsugifc6" path="res://assets/images/menu background.png" id="4_kls10"]
 
 [node name="options" type="Node2D" unique_id=1857266386]
 script = ExtResource("1_5v8ap")
@@ -13,16 +16,35 @@ offset_bottom = 40.0
 
 [node name="HSlider" type="HSlider" parent="Control" unique_id=75796740]
 layout_mode = 0
-offset_left = 131.0
-offset_top = 201.0
-offset_right = 464.0
-offset_bottom = 217.0
+offset_left = 405.0
+offset_top = 282.0
+offset_right = 738.0
+offset_bottom = 298.0
 
-[node name="Label" type="Label" parent="." unique_id=1723440511]
-offset_left = 249.0
-offset_top = 164.0
-offset_right = 385.0
-offset_bottom = 187.0
+[node name="Label" type="Label" parent="Control/HSlider" unique_id=1723440511]
+layout_mode = 0
+offset_left = 91.0
+offset_top = -65.0
+offset_right = 247.0
+offset_bottom = -4.0
+theme_override_colors/font_color = Color(0.7372549, 0.76862746, 0.7764706, 1)
+theme_override_font_sizes/font_size = 44
 text = "Sounds"
+
+[node name="TextureButton" type="TextureButton" parent="Control" unique_id=575710676]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 512.0
+offset_right = 648.0
+offset_bottom = 576.0
+texture_normal = ExtResource("2_07a1d")
+script = ExtResource("3_p8250")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1213902743]
+z_index = -55
+offset_right = 1152.0
+offset_bottom = 672.0
+mouse_filter = 2
+texture = ExtResource("4_kls10")
 
 [connection signal="value_changed" from="Control/HSlider" to="." method="_on_h_slider_value_changed"]
