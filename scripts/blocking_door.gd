@@ -1,8 +1,7 @@
 extends StaticBody2D
 
 @export_enum("Light Blue", "Purple", "Yellow", "Pink", "Blue", "Black", "Green", "Gray", "Orange", "White", "Red", "Bronze") var color: int
-@export var active = true
-var inverted = true
+@export var active = true # true = zu | false = auf
 
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
@@ -10,21 +9,20 @@ var inverted = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	inverted = active
 	sprite_2d.frame_coords.x = int(active)
 	sprite_2d.frame_coords.y = color
 	collision_shape_2d.set_deferred("disabled", !active)
 
 
 func turn_on():
-	active = bool(1-int(inverted))
+	active = true
 	collision_shape_2d.set_deferred("disabled", !active)
 	sprite_2d.frame_coords.x = int(active)
 	#light_occluder_2d.show()
 
 
 func turn_off():
-	active = inverted
+	active = false
 	collision_shape_2d.set_deferred("disabled", !active)
 	sprite_2d.frame_coords.x = int(active)
 	#light_occluder_2d.hide()
