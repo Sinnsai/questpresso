@@ -530,6 +530,7 @@ position = Vector2(328, 301)
 [node name="Door" parent="." unique_id=1002253811 instance=ExtResource("4_1t22r")]
 z_index = -2
 position = Vector2(54, 288)
+color = 4
 
 [node name="light" parent="." unique_id=424952006 instance=ExtResource("5_d0gjc")]
 visible = false

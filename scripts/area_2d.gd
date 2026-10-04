@@ -2,6 +2,9 @@ extends Area2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var interactable: Area2D = $Interactable
 @export var next_scene: String
+@export_enum("Light Blue", "Purple", "Yellow", "Pink", "Blue", "Black", "Green", "Gray", "Orange", "White", "Red", "Bronze") var color: int
+@onready var color_sprite: Sprite2D = $color
+
 
 var open = false
 var player1 = false
@@ -12,6 +15,7 @@ signal door_closed
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	interactable.interact = _on_interact
+	color_sprite.frame = color
 
 
 

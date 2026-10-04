@@ -529,6 +529,7 @@ position = Vector2(101, 289)
 
 [node name="Door" parent="." unique_id=1002253811 instance=ExtResource("4_d3jkd")]
 position = Vector2(521, 186)
+color = 5
 
 [node name="button_lightblue" parent="." unique_id=1526610005 instance=ExtResource("7_f31uk")]
 position = Vector2(159, 310)

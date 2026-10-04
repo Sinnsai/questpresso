@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cfh46l7l11q8b" path="res://scripts/area_2d.gd" id="1_83dcw"]
 [ext_resource type="Texture2D" uid="uid://colh3sv1tdt8h" path="res://assets/images/animated/door.png" id="2_la1wf"]
 [ext_resource type="PackedScene" uid="uid://bj8ar2q6cwcl7" path="res://scenes/interactable.tscn" id="3_18pbm"]
+[ext_resource type="Texture2D" uid="uid://c13ro5jtxhjh8" path="res://assets/images/animated/markers.png" id="3_la1wf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mbagn"]
 size = Vector2(32, 48)
@@ -25,6 +26,11 @@ hframes = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1831263782]
 position = Vector2(-6, 4)
 shape = SubResource("RectangleShape2D_mbagn")
+
+[node name="color" type="Sprite2D" parent="." unique_id=184096946]
+position = Vector2(-6, -18.5)
+texture = ExtResource("3_la1wf")
+vframes = 12
 
 [node name="Interactable" parent="." unique_id=580192322 instance=ExtResource("3_18pbm")]
 

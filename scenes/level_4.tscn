@@ -25,6 +25,7 @@ position = Vector2(324, 292)
 
 [node name="Door" parent="." index="5" unique_id=1002253811]
 position = Vector2(533, 57)
+color = 11
 
 [node name="light" parent="." index="6" unique_id=424952006]
 visible = false
@@ -90,6 +91,7 @@ color = 11
 
 [node name="door_pink" parent="." index="20" unique_id=394905985 instance=ExtResource("4_wom6i")]
 position = Vector2(258, 201)
+color = 3
 
 [node name="fusebox_pink" parent="." index="21" unique_id=1866668390 instance=ExtResource("2_6malg")]
 position = Vector2(483.5, 61)
