@@ -19,7 +19,9 @@ offset_left = 399.0
 offset_top = 331.0
 offset_right = 732.0
 offset_bottom = 347.0
-value = 50.0
+max_value = 1.0
+step = 0.1
+value = 0.5
 
 [node name="Label" type="Label" parent="Control/HSlider" unique_id=1723440511]
 layout_mode = 0
