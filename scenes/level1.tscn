@@ -622,14 +622,13 @@ shadow_filter = 1
 texture_scale = 1.44
 
 [node name="light3" parent="." unique_id=1461711101 instance=ExtResource("10_d3jkd")]
-visible = false
-position = Vector2(182, 25)
+position = Vector2(182, 24)
 energy = 0.71
 shadow_filter = 1
 texture_scale = 1.44
 
 [node name="light4" parent="." unique_id=1658862894 instance=ExtResource("10_d3jkd")]
-position = Vector2(502, 23)
+position = Vector2(502, 24)
 energy = 0.71
 shadow_filter = 1
 texture_scale = 1.44
@@ -640,15 +639,15 @@ shadow_filter = 1
 texture_scale = 1.44
 
 [node name="light6" parent="." unique_id=700050247 instance=ExtResource("10_d3jkd")]
-position = Vector2(421, 148.00002)
+position = Vector2(420.5, 147.50002)
 rotation = -0.7826617
 scale = Vector2(1.039822, 0.9692925)
 energy = 0.42
 shadow_filter = 1
-texture_scale = 1.44
+texture_scale = 6.8
 
 [node name="light7" parent="." unique_id=164236545 instance=ExtResource("10_d3jkd")]
-position = Vector2(331, 23.000004)
+position = Vector2(331, 24.000004)
 rotation = -0.0029737893
 scale = Vector2(1.039822, 0.9692925)
 energy = 0.56
@@ -656,7 +655,7 @@ shadow_filter = 1
 texture_scale = 1.44
 
 [node name="light8" parent="." unique_id=7310588 instance=ExtResource("10_d3jkd")]
-position = Vector2(288, 104)
+position = Vector2(288, 101.00003)
 rotation = -0.0029737893
 scale = Vector2(1.039822, 0.9692925)
 energy = 0.56
