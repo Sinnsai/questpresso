@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://c45oge0etj00q"]
 
 [ext_resource type="Texture2D" uid="uid://dksfpbcs5sgu8" path="res://assets/images/Tilemap/tilesheet.png" id="1_0so5e"]
-[ext_resource type="Script" uid="uid://ciuxdbs6ogbdp" path="res://scenes/level_22.gd" id="1_3edcp"]
+[ext_resource type="Script" uid="uid://ciuxdbs6ogbdp" path="res://scripts/level_22.gd" id="1_3edcp"]
 [ext_resource type="PackedScene" uid="uid://dv304mi3miyvu" path="res://scenes/player.tscn" id="2_jj8rx"]
 [ext_resource type="PackedScene" uid="uid://cwkjtbydsudf0" path="res://scenes/player2.tscn" id="3_kcvjt"]
 [ext_resource type="PackedScene" uid="uid://csvnn005yrf7o" path="res://scenes/door.tscn" id="4_1t22r"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://d25jkv7gg5cw8" path="res://scenes/wind.tscn" id="8_d0gjc"]
 [ext_resource type="PackedScene" uid="uid://chi3tiwt5gb55" path="res://scenes/breakbox.tscn" id="9_3edcp"]
 [ext_resource type="PackedScene" uid="uid://cne4k6rdpgb4u" path="res://scenes/button.tscn" id="10_a3bxh"]
+[ext_resource type="AudioStream" uid="uid://ctsj4i0q2xnpa" path="res://assets/sounds/Kompliment.mp3" id="12_a3bxh"]
+[ext_resource type="Script" uid="uid://24hd4y1ihrp5" path="res://scenes/trigger_voiceline.gd" id="13_iv6j3"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2ku1j"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -494,7 +496,10 @@ texture = ExtResource("1_0so5e")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_d3jkd")
 
-[node name="level1" type="Node2D" unique_id=2110850906]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mbagn"]
+size = Vector2(264.5, 91)
+
+[node name="level2" type="Node2D" unique_id=2110850906]
 script = ExtResource("1_3edcp")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1501176998]
@@ -521,33 +526,38 @@ z_index = 1
 position = Vector2(214, 300)
 
 [node name="Player2" parent="." unique_id=136275208 groups=["player2"] instance=ExtResource("3_kcvjt")]
-position = Vector2(79, 89)
+position = Vector2(328, 303)
 
 [node name="Door" parent="." unique_id=1002253811 instance=ExtResource("4_1t22r")]
 z_index = -2
 position = Vector2(54, 288)
 
 [node name="light" parent="." unique_id=424952006 instance=ExtResource("5_d0gjc")]
+visible = false
 position = Vector2(298, 27)
 energy = 1.01
 texture_scale = 3.54
 
 [node name="light2" parent="." unique_id=1606540577 instance=ExtResource("5_d0gjc")]
-position = Vector2(69, 150)
+visible = false
+position = Vector2(63, 153)
 energy = 0.69
 texture_scale = 2.8
 
 [node name="light3" parent="." unique_id=60930860 instance=ExtResource("5_d0gjc")]
+visible = false
 position = Vector2(152, 275)
 scale = Vector2(0.5810731, 0.6695165)
 energy = 0.71
 texture_scale = 0.98
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=2112920056]
+visible = false
 color = Color(0.21682696, 0.21526307, 0.23112327, 1)
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1105212185]
-position = Vector2(276.00003, 128)
+visible = false
+position = Vector2(298, 138)
 scale = Vector2(3.5, 2.703125)
 color = Color(0.78602254, 0.9593647, 0.9987505, 1)
 range_item_cull_mask = 2
@@ -593,3 +603,18 @@ color = 1
 [node name="fusebox2" parent="." unique_id=331952158 instance=ExtResource("9_3edcp")]
 position = Vector2(86, 292)
 color = 4
+
+[node name="voice" type="AudioStreamPlayer2D" parent="." unique_id=255750404]
+stream = ExtResource("12_a3bxh")
+bus = &"voice_lines"
+
+[node name="trigger_voiceline" type="Area2D" parent="." unique_id=1713649841]
+collision_layer = 13
+collision_mask = 13
+script = ExtResource("13_iv6j3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="trigger_voiceline" unique_id=1040975882]
+position = Vector2(149.75, 64)
+shape = SubResource("RectangleShape2D_mbagn")
+
+[connection signal="body_entered" from="trigger_voiceline" to="." method="_on_trigger_voiceline_body_entered"]

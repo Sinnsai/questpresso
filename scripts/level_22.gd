@@ -11,8 +11,11 @@ extends Node2D
 @onready var light_3: PointLight2D = $light3
 @onready var light_2: PointLight2D = $light2
 @onready var light: PointLight2D = $light
+@onready var voice: AudioStreamPlayer2D = $voice
+@onready var trigger_voiceline: Area2D = $trigger_voiceline
 
 var first_event = true
+var voice_line = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	light_2.turn_off()
@@ -45,3 +48,9 @@ func first_trigger() -> void:
 		light_3.turn_on()
 		light.turn_off()
 		first_event = false
+
+
+func _on_trigger_voiceline_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player") and voice_line:
+		voice.play()
+		voice_line = false
