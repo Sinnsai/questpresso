@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://o6aiwha7n6aj" path="res://scenes/blocking_door.tscn" id="9_conm7"]
 [ext_resource type="PackedScene" uid="uid://dh13cq0smx5kf" path="res://scenes/light.tscn" id="10_d3jkd"]
 [ext_resource type="Texture2D" uid="uid://c5rdq14ateclj" path="res://assets/images/animated/2d_lights_and_shadows_neutral_point_light.webp" id="11_u3awl"]
+[ext_resource type="AudioStream" uid="uid://dpooy7nux6726" path="res://assets/sounds/IQ.mp3" id="12_2ku1j"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2ku1j"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -494,6 +495,9 @@ texture = ExtResource("1_ejswk")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_d3jkd")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mbagn"]
+size = Vector2(193, 63)
+
 [node name="level1" type="Node2D" unique_id=2110850906]
 script = ExtResource("1_bbk5w")
 
@@ -521,7 +525,7 @@ z_index = 1
 position = Vector2(48, 288)
 
 [node name="Player2" parent="." unique_id=136275208 groups=["player2"] instance=ExtResource("6_2ku1j")]
-position = Vector2(83, 288)
+position = Vector2(101, 289)
 
 [node name="Door" parent="." unique_id=1002253811 instance=ExtResource("4_d3jkd")]
 position = Vector2(521, 186)
@@ -599,15 +603,18 @@ color = 4
 wind_force = Vector2(0, -2000)
 
 [node name="fusebox_black" parent="." unique_id=1649822758 instance=ExtResource("3_conm7")]
+visible = false
 position = Vector2(387, 286)
 color = 5
 
 [node name="light" parent="." unique_id=424952006 instance=ExtResource("10_d3jkd")]
+visible = false
 position = Vector2(119, 261)
 shadow_filter = 1
 texture_scale = 1.44
 
 [node name="light2" parent="." unique_id=730058262 instance=ExtResource("10_d3jkd")]
+visible = false
 position = Vector2(79, 117)
 energy = 0.85
 shadow_filter = 1
@@ -621,17 +628,20 @@ shadow_filter = 1
 texture_scale = 1.44
 
 [node name="light4" parent="." unique_id=1658862894 instance=ExtResource("10_d3jkd")]
+visible = false
 position = Vector2(502, 23)
 energy = 0.71
 shadow_filter = 1
 texture_scale = 1.44
 
 [node name="light5" parent="." unique_id=636721434 instance=ExtResource("10_d3jkd")]
+visible = false
 position = Vector2(271, 181)
 shadow_filter = 1
 texture_scale = 1.44
 
 [node name="light6" parent="." unique_id=700050247 instance=ExtResource("10_d3jkd")]
+visible = false
 position = Vector2(421, 148.00002)
 rotation = -0.7826617
 scale = Vector2(1.039822, 0.9692925)
@@ -640,6 +650,7 @@ shadow_filter = 1
 texture_scale = 1.44
 
 [node name="light7" parent="." unique_id=164236545 instance=ExtResource("10_d3jkd")]
+visible = false
 position = Vector2(331, 23.000004)
 rotation = -0.0029737893
 scale = Vector2(1.039822, 0.9692925)
@@ -648,6 +659,7 @@ shadow_filter = 1
 texture_scale = 1.44
 
 [node name="light8" parent="." unique_id=7310588 instance=ExtResource("10_d3jkd")]
+visible = false
 position = Vector2(288, 104)
 rotation = -0.0029737893
 scale = Vector2(1.039822, 0.9692925)
@@ -656,6 +668,7 @@ shadow_filter = 1
 texture_scale = 1.44
 
 [node name="light9" parent="." unique_id=730862673 instance=ExtResource("10_d3jkd")]
+visible = false
 position = Vector2(75.000046, 24.000008)
 rotation = -0.0029737893
 scale = Vector2(1.039822, 0.9692925)
@@ -663,11 +676,27 @@ energy = 0.85
 shadow_filter = 1
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=2112920056]
+visible = false
 color = Color(0.21682696, 0.21526307, 0.23112327, 1)
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1105212185]
+visible = false
 position = Vector2(276, 174.00002)
 scale = Vector2(3.5, 2.703125)
 color = Color(0.78602254, 0.9593647, 0.9987505, 1)
 range_item_cull_mask = 2
 texture = ExtResource("11_u3awl")
+
+[node name="voice_trigger" type="Area2D" parent="." unique_id=1515475713]
+collision_layer = 13
+collision_mask = 13
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="voice_trigger" unique_id=555982640]
+position = Vector2(337, 47)
+shape = SubResource("RectangleShape2D_mbagn")
+
+[node name="voice_line1" type="AudioStreamPlayer2D" parent="." unique_id=1575931684]
+stream = ExtResource("12_2ku1j")
+bus = &"voice_lines"
+
+[connection signal="body_entered" from="voice_trigger" to="." method="_on_voice_trigger_body_entered"]

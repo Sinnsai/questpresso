@@ -20,7 +20,9 @@ extends Node2D
 @onready var wind_blue: Area2D = $wind_blue
 @onready var fusebox_black: Area2D = $fusebox_black
 @onready var door: Area2D = $Door
+@onready var voice_line_1: AudioStreamPlayer2D = $voice_line1
 
+var voice_line = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -76,3 +78,11 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+
+
+
+func _on_voice_trigger_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player") and voice_line:
+		voice_line_1.play()
+		voice_line = false
