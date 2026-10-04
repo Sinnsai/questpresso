@@ -21,7 +21,6 @@ func _process(_delta: float) -> void:
 	if current_interactions and can_interact:
 		current_interactions.sort_custom(_sort_by_nearest)
 		if current_interactions[0].is_interactable:
-			interact_label.text = "ctrl"
 			interact_label.show()
 	else:
 		interact_label.hide()

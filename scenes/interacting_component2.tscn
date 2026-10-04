@@ -16,6 +16,7 @@ collision_mask = 2
 shape = SubResource("CircleShape2D_mbagn")
 
 [node name="InteractLabel" type="Label" parent="." unique_id=1585079967]
+visible = false
 z_index = 10
 anchors_preset = 8
 anchor_left = 0.5
@@ -28,7 +29,6 @@ offset_right = 20.0
 offset_bottom = -30.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "E"
 horizontal_alignment = 1
 vertical_alignment = 1
 

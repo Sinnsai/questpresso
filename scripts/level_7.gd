@@ -11,6 +11,7 @@ extends Node2D
 @onready var door_green: Area2D = $Door
 @onready var start_voice_line: AudioStreamPlayer2D = $start_voice_line
 @onready var musik: AudioStreamPlayer2D = $musik
+@onready var tutorial: Label = $tutorial
 
 var purple_count = 0
 
@@ -19,6 +20,7 @@ func _ready() -> void:
 	#voice line 
 	start_voice_line.play()
 	musik.play()
+	hide_label()
 	
 	# light blue
 	fusebox_lightblue.fuse_on.connect(wind_lightblue.turn_on)
@@ -39,13 +41,18 @@ func _ready() -> void:
 	fusebox_green.fuse_off.connect(door_green.close_door)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
+
+func hide_label():
+	await get_tree().create_timer(7.5).timeout
+	tutorial.hide()
 
 func purple_pressed():
 	purple_count+=1
 	wind_purple.turn_off()
+
 
 func purple_released():
 	purple_count-=1
