@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://mqxbr7co0lj2"]
+
+[ext_resource type="Script" uid="uid://btw0simixs467" path="res://scripts/options.gd" id="1_2iy26"]
+[ext_resource type="Texture2D" uid="uid://8mipd4nrkkhv" path="res://assets/images/back_button.png" id="2_kv8mn"]
+[ext_resource type="Texture2D" uid="uid://uk73nsugifc6" path="res://assets/images/menu background.png" id="3_1sggn"]
+
+[node name="options" type="Node2D" unique_id=1857266386]
+script = ExtResource("1_2iy26")
+
+[node name="Control" type="Control" parent="." unique_id=1076116263]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HSlider" type="HSlider" parent="Control" unique_id=75796740]
+layout_mode = 0
+offset_left = 399.0
+offset_top = 331.0
+offset_right = 732.0
+offset_bottom = 347.0
+value = 50.0
+
+[node name="Label" type="Label" parent="Control/HSlider" unique_id=1723440511]
+layout_mode = 0
+offset_left = 91.0
+offset_top = -68.0
+offset_right = 247.0
+offset_bottom = -7.0
+theme_override_colors/font_color = Color(0.7372549, 0.76862746, 0.7764706, 1)
+theme_override_font_sizes/font_size = 44
+text = "Sounds"
+
+[node name="back" type="TextureButton" parent="Control" unique_id=1450752431]
+layout_mode = 0
+offset_left = 485.0
+offset_top = 527.0
+offset_right = 645.0
+offset_bottom = 591.0
+texture_normal = ExtResource("2_kv8mn")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=233201754]
+z_index = -55
+offset_left = 3.0
+offset_top = -3.0
+offset_right = 1155.0
+offset_bottom = 669.0
+mouse_filter = 2
+texture = ExtResource("3_1sggn")
+
+[connection signal="value_changed" from="Control/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="Control/back" to="." method="_on_back_pressed"]
