@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://o6aiwha7n6aj" path="res://scenes/blocking_door.tscn" id="5_v7yg4"]
 [ext_resource type="AudioStream" uid="uid://drxio2jgkgdgy" path="res://assets/sounds/Anfang.mp3" id="7_ci1vt"]
 [ext_resource type="AudioStream" uid="uid://dm3rfm0jn8tf1" path="res://assets/sounds/Zambolino__The_Living_Dead_(freetouse.com).mp3" id="9_wu5f3"]
+[ext_resource type="PackedScene" uid="uid://dxpwenbynlx3y" path="res://scenes/pause_menu.tscn" id="10_fsh38"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mbagn"]
 font_color = Color(0.56531143, 0.955918, 0.95284075, 1)
@@ -117,3 +118,5 @@ to Interact"
 label_settings = SubResource("LabelSettings_mbagn")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="pause_menu" parent="." index="23" unique_id=78249144 instance=ExtResource("10_fsh38")]
