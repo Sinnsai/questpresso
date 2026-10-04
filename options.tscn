@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://mqxbr7co0lj2"]
+
+[ext_resource type="Script" uid="uid://btw0simixs467" path="res://options.gd" id="1_5v8ap"]
+
+[node name="options" type="Node2D" unique_id=1857266386]
+script = ExtResource("1_5v8ap")
+
+[node name="Control" type="Control" parent="." unique_id=1076116263]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HSlider" type="HSlider" parent="Control" unique_id=75796740]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 201.0
+offset_right = 464.0
+offset_bottom = 217.0
+
+[node name="Label" type="Label" parent="." unique_id=1723440511]
+offset_left = 249.0
+offset_top = 164.0
+offset_right = 385.0
+offset_bottom = 187.0
+text = "Sounds"
+
+[connection signal="value_changed" from="Control/HSlider" to="." method="_on_h_slider_value_changed"]
