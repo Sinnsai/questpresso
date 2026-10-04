@@ -248,8 +248,11 @@ texture_normal = ExtResource("5_5dd4i")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=923614560]
 z_index = -55
-offset_right = 1152.0
-offset_bottom = 672.0
+offset_left = 3.0
+offset_top = -3.0
+offset_right = 1155.0
+offset_bottom = 669.0
+mouse_filter = 2
 texture = ExtResource("2_ekxnf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=883036754]
