@@ -52,26 +52,26 @@ func _ready() -> void:
 	fusebox_pink_2.fuse_off.connect(fusebox_pink_2.turn_off)
 	
 	# green
-	button_green.button_pressed.connect(door_green.turn_on)
-	button_green.button_released.connect(door_green.turn_off)
+	button_green.button_pressed.connect(door_green.turn_off)
+	button_green.button_released.connect(door_green.turn_on)
 	
 	# orange
-	fusebox_orange.fuse_on.connect(door_orange.turn_on)
-	fusebox_orange.fuse_off.connect(door_orange.turn_off)
+	fusebox_orange.fuse_on.connect(door_orange.turn_off)
+	fusebox_orange.fuse_off.connect(door_orange.turn_on)
 	
 	# yellow
-	fusebox_yellow.fuse_on.connect(door_yellow.turn_on)
-	fusebox_yellow.fuse_off.connect(door_yellow.turn_off)
-	fusebox_yellow.fuse_on.connect(door_yellow_2.turn_on)
-	fusebox_yellow.fuse_off.connect(door_yellow_2.turn_off)
+	fusebox_yellow.fuse_on.connect(door_yellow.turn_off)
+	fusebox_yellow.fuse_off.connect(door_yellow.turn_on)
+	fusebox_yellow.fuse_on.connect(door_yellow_2.turn_off)
+	fusebox_yellow.fuse_off.connect(door_yellow_2.turn_on)
 	
 	# blue
 	button_blue.button_pressed.connect(wind_blue.turn_on)
 	button_blue.button_released.connect(wind_blue.turn_off)
 	
 	# black / door
-	fusebox_black.fuse_off.connect(door.open_door)
-	fusebox_black.fuse_on.connect(door.close_door)
+	fusebox_black.fuse_on.connect(door.open_door)
+	fusebox_black.fuse_off.connect(door.close_door)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
