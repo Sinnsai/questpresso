@@ -9,6 +9,10 @@ const JUMP_VELOCITY = -400.0
 var current_wind_force: Vector2 = Vector2.ZERO
 
 
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("reset"):
+		get_tree().reload_current_scene()
+
 func _physics_process(delta: float) -> void:
 	# Add animation
 	if velocity.x > 1 or velocity.x < -1:
