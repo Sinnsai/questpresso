@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://bsi0ndv0yhxsd"]
+
+[ext_resource type="Script" uid="uid://3ysj67ohlus0" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+
+[node name="Main_menu" type="Node2D" unique_id=427662414]
+script = ExtResource("1_l6cm7")
+
+[node name="Button_manager" type="Control" parent="." unique_id=1640117045]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Start" type="Button" parent="Button_manager" unique_id=905668695]
+layout_mode = 0
+offset_left = 377.0
+offset_top = 83.0
+offset_right = 706.0
+offset_bottom = 209.0
+text = "Start Game"
+
+[node name="Level_Selection" type="Button" parent="Button_manager" unique_id=419202293]
+layout_mode = 0
+offset_left = 389.0
+offset_top = 247.0
+offset_right = 708.0
+offset_bottom = 366.0
+text = "Levels"
+
+[node name="Quit" type="Button" parent="Button_manager" unique_id=280581877]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 531.0
+offset_right = 719.0
+offset_bottom = 640.0
+text = "Quit"
+
+[node name="Options" type="Button" parent="Button_manager" unique_id=695247300]
+layout_mode = 0
+offset_left = 389.0
+offset_top = 396.0
+offset_right = 708.0
+offset_bottom = 515.0
+text = "Options"
+
+[connection signal="pressed" from="Button_manager/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Button_manager/Level_Selection" to="." method="_on_level_selection_pressed"]
+[connection signal="pressed" from="Button_manager/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Button_manager/Options" to="." method="_on_options_pressed"]
