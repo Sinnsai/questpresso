@@ -16,10 +16,18 @@ offset_bottom = 40.0
 
 [node name="HSlider" type="HSlider" parent="Control" unique_id=75796740]
 layout_mode = 0
+<<<<<<< HEAD
 offset_left = 405.0
 offset_top = 282.0
 offset_right = 738.0
 offset_bottom = 298.0
+=======
+offset_left = 131.0
+offset_top = 201.0
+offset_right = 464.0
+offset_bottom = 217.0
+value = 50.0
+>>>>>>> 208acbc94c1e3edc3b10aedac120b0f9d89aaa86
 
 [node name="Label" type="Label" parent="Control/HSlider" unique_id=1723440511]
 layout_mode = 0
