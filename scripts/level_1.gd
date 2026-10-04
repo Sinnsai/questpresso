@@ -22,22 +22,17 @@ extends Node2D
 @onready var door: Area2D = $Door
 @onready var voice_line_1: AudioStreamPlayer2D = $voice_line1
 
+var lightblue_count = 0
 var voice_line = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# light blue
-	button_lightblue.button_pressed.connect(wind_lightblue.turn_on)
-	button_lightblue.button_released.connect(wind_lightblue.turn_off)
-	button_lightblue.button_pressed.connect(door_lightblue.turn_on)
-	button_lightblue.button_released.connect(door_lightblue.turn_off)
-	button_lightblue.button_pressed.connect(fusebox_lightblue.turn_on)
-	button_lightblue.button_released.connect(fusebox_lightblue.turn_off)
+	button_lightblue.button_pressed.connect(lightblue_plus)
+	button_lightblue.button_released.connect(lightblue_minus)
 	
-	fusebox_lightblue.fuse_on.connect(wind_lightblue.turn_on)
-	fusebox_lightblue.fuse_off.connect(wind_lightblue.turn_off)
-	fusebox_lightblue.fuse_on.connect(door_lightblue.turn_on)
-	fusebox_lightblue.fuse_off.connect(door_lightblue.turn_off)
+	fusebox_lightblue.fuse_on.connect(lightblue_plus)
+	fusebox_lightblue.fuse_off.connect(lightblue_minus)
 	
 	# pink
 	fusebox_pink.fuse_on.connect(wind_pink.turn_on)
@@ -86,3 +81,14 @@ func _on_voice_trigger_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player") and voice_line:
 		voice_line_1.play()
 		voice_line = false
+
+func lightblue_plus():
+	lightblue_count+=1
+	wind_lightblue.turn_on()
+	door_lightblue.turn_on()
+
+func lightblue_minus():
+	lightblue_count-=1
+	if lightblue_count == 0:
+		wind_lightblue.turn_off()
+		door_lightblue.turn_off()

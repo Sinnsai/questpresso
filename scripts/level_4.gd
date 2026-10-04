@@ -15,6 +15,7 @@ extends Node2D
 @onready var fusebox_pink: Area2D = $fusebox_pink
 @onready var door_bronze: Area2D = $Door
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# light blue
