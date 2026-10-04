@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://c5rdq14ateclj" path="res://assets/images/animated/2d_lights_and_shadows_neutral_point_light.webp" id="11_u3awl"]
 [ext_resource type="AudioStream" uid="uid://dpooy7nux6726" path="res://assets/sounds/IQ.mp3" id="12_2ku1j"]
 [ext_resource type="AudioStream" uid="uid://bqup2vviybxy" path="res://assets/sounds/Zeit.mp3" id="13_f31uk"]
+[ext_resource type="AudioStream" uid="uid://dm3rfm0jn8tf1" path="res://assets/sounds/Zambolino__The_Living_Dead_(freetouse.com).mp3" id="14_gnai3"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2ku1j"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -500,6 +501,7 @@ sources/0 = SubResource("TileSetAtlasSource_d3jkd")
 size = Vector2(193, 63)
 
 [node name="level1" type="Node2D" unique_id=2110850906]
+scale = Vector2(2, 2)
 script = ExtResource("1_bbk5w")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1501176998]
@@ -530,6 +532,7 @@ position = Vector2(101, 289)
 
 [node name="Door" parent="." unique_id=1002253811 instance=ExtResource("4_d3jkd")]
 position = Vector2(521, 186)
+next_scene = "res://scenes/level_cake.tscn"
 color = 5
 
 [node name="button_lightblue" parent="." unique_id=1526610005 instance=ExtResource("7_f31uk")]
@@ -619,6 +622,7 @@ shadow_filter = 1
 texture_scale = 1.44
 
 [node name="light3" parent="." unique_id=1461711101 instance=ExtResource("10_d3jkd")]
+visible = false
 position = Vector2(182, 25)
 energy = 0.71
 shadow_filter = 1
@@ -690,5 +694,9 @@ bus = &"voice_lines"
 
 [node name="start_voice" type="AudioStreamPlayer2D" parent="." unique_id=777091502]
 stream = ExtResource("13_f31uk")
+
+[node name="musik" type="AudioStreamPlayer2D" parent="." unique_id=1619892001]
+stream = ExtResource("14_gnai3")
+bus = &"musik"
 
 [connection signal="body_entered" from="voice_trigger" to="." method="_on_voice_trigger_body_entered"]

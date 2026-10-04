@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://chi3tiwt5gb55" path="res://scenes/breakbox.tscn" id="9_3edcp"]
 [ext_resource type="PackedScene" uid="uid://cne4k6rdpgb4u" path="res://scenes/button.tscn" id="10_a3bxh"]
 [ext_resource type="AudioStream" uid="uid://ctsj4i0q2xnpa" path="res://assets/sounds/Kompliment.mp3" id="12_a3bxh"]
+[ext_resource type="AudioStream" uid="uid://dm3rfm0jn8tf1" path="res://assets/sounds/Zambolino__The_Living_Dead_(freetouse.com).mp3" id="13_iv6j3"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2ku1j"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -612,5 +613,9 @@ collision_mask = 13
 [node name="CollisionShape2D" type="CollisionShape2D" parent="trigger_voiceline" unique_id=1040975882]
 position = Vector2(149.75, 64)
 shape = SubResource("RectangleShape2D_mbagn")
+
+[node name="musik" type="AudioStreamPlayer2D" parent="." unique_id=1937154473]
+stream = ExtResource("13_iv6j3")
+bus = &"musik"
 
 [connection signal="body_entered" from="trigger_voiceline" to="." method="_on_trigger_voiceline_body_entered"]

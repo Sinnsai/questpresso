@@ -16,6 +16,7 @@ extends Node2D
 @onready var door_bronze: Area2D = $Door
 @onready var first_voice_line: AudioStreamPlayer2D = $first_voice_line
 @onready var to_long: AudioStreamPlayer2D = $to_long
+@onready var musik: AudioStreamPlayer2D = $musik
 
 var player1 = false
 var player2 = false
@@ -25,7 +26,7 @@ var player2 = false
 func _ready() -> void:
 	#first voice line
 	first_voice_line.play()
-	
+	musik.play()
 	
 	# light blue
 	button_lightblue.button_pressed.connect(wind_lightblue.turn_on)
@@ -57,7 +58,7 @@ func _ready() -> void:
 	to_long_in_level()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if player1 and player2:
 		get_tree().change_scene_to_file(door_bronze.next_scene)
 

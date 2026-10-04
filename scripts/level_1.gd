@@ -22,6 +22,7 @@ extends Node2D
 @onready var door: Area2D = $Door
 @onready var voice_line_1: AudioStreamPlayer2D = $voice_line1
 @onready var start_voice: AudioStreamPlayer2D = $start_voice
+@onready var musik: AudioStreamPlayer2D = $musik
 
 var lightblue_count = 0
 var voice_line = true
@@ -30,7 +31,7 @@ var voice_line = true
 func _ready() -> void:
 	
 	start_voice.play()
-	
+	musik.play()
 	
 	# light blue
 	button_lightblue.button_pressed.connect(lightblue_plus)

@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://csvnn005yrf7o" path="res://scenes/door.tscn" id="4_wom6i"]
 [ext_resource type="AudioStream" uid="uid://s4deh4w5b3op" path="res://assets/sounds/XXXXXL.mp3" id="8_yk4f3"]
 [ext_resource type="AudioStream" uid="uid://6huoixlaq5lp" path="res://assets/sounds/Liebe.mp3" id="9_yk4f3"]
+[ext_resource type="AudioStream" uid="uid://dm3rfm0jn8tf1" path="res://assets/sounds/Zambolino__The_Living_Dead_(freetouse.com).mp3" id="10_cp0rv"]
 
 [node name="level4" unique_id=2110850906 instance=ExtResource("1_huvaw")]
 scale = Vector2(2, 2)
@@ -125,6 +126,10 @@ bus = &"voice_lines"
 
 [node name="to_long" type="AudioStreamPlayer2D" parent="." index="26" unique_id=1949290340]
 stream = ExtResource("9_yk4f3")
+
+[node name="musik" type="AudioStreamPlayer2D" parent="." index="27" unique_id=364468299]
+stream = ExtResource("10_cp0rv")
+bus = &"musik"
 
 [connection signal="body_entered" from="Door" to="." method="_on_door_body_entered"]
 [connection signal="body_entered" from="door_pink" to="." method="_on_door_pink_body_entered"]
