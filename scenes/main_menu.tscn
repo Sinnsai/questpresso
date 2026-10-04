@@ -13,10 +13,10 @@ offset_bottom = 40.0
 
 [node name="Start" type="Button" parent="Button_manager" unique_id=905668695]
 layout_mode = 0
-offset_left = 371.0
-offset_top = 80.0
-offset_right = 700.0
-offset_bottom = 206.0
+offset_left = 390.0
+offset_top = 94.0
+offset_right = 719.0
+offset_bottom = 220.0
 text = "Start Game"
 
 [node name="Level_Selection" type="Button" parent="Button_manager" unique_id=419202293]

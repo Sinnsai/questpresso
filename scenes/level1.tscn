@@ -539,7 +539,7 @@ color = 5
 position = Vector2(159, 310)
 
 [node name="fusebox_lightblue" parent="." unique_id=1538294224 instance=ExtResource("3_conm7")]
-position = Vector2(324, 125)
+position = Vector2(325, 125)
 
 [node name="wind_lightblue" parent="." unique_id=1657574721 instance=ExtResource("5_u3awl")]
 position = Vector2(240, 307)
@@ -554,7 +554,7 @@ position = Vector2(160, 205)
 color = 3
 
 [node name="fusebox_pink2" parent="." unique_id=774036604 instance=ExtResource("3_conm7")]
-position = Vector2(335, 45)
+position = Vector2(335, 46)
 color = 3
 
 [node name="wind_pink" parent="." unique_id=1079342545 instance=ExtResource("5_u3awl")]
@@ -564,7 +564,7 @@ color = 3
 wind_force = Vector2(0, -1400)
 
 [node name="door_pink" parent="." unique_id=171665495 instance=ExtResource("9_conm7")]
-position = Vector2(232, 137)
+position = Vector2(232, 136)
 color = 3
 active = false
 
@@ -622,14 +622,13 @@ shadow_filter = 1
 texture_scale = 1.44
 
 [node name="light3" parent="." unique_id=1461711101 instance=ExtResource("10_d3jkd")]
-visible = false
-position = Vector2(182, 25)
+position = Vector2(182, 24)
 energy = 0.71
 shadow_filter = 1
 texture_scale = 1.44
 
 [node name="light4" parent="." unique_id=1658862894 instance=ExtResource("10_d3jkd")]
-position = Vector2(502, 23)
+position = Vector2(502, 24)
 energy = 0.71
 shadow_filter = 1
 texture_scale = 1.44
@@ -640,15 +639,15 @@ shadow_filter = 1
 texture_scale = 1.44
 
 [node name="light6" parent="." unique_id=700050247 instance=ExtResource("10_d3jkd")]
-position = Vector2(421, 148.00002)
+position = Vector2(420.5, 147.50002)
 rotation = -0.7826617
 scale = Vector2(1.039822, 0.9692925)
 energy = 0.42
 shadow_filter = 1
-texture_scale = 1.44
+texture_scale = 6.8
 
 [node name="light7" parent="." unique_id=164236545 instance=ExtResource("10_d3jkd")]
-position = Vector2(331, 23.000004)
+position = Vector2(331, 24.000004)
 rotation = -0.0029737893
 scale = Vector2(1.039822, 0.9692925)
 energy = 0.56
@@ -656,7 +655,7 @@ shadow_filter = 1
 texture_scale = 1.44
 
 [node name="light8" parent="." unique_id=7310588 instance=ExtResource("10_d3jkd")]
-position = Vector2(288, 104)
+position = Vector2(288, 101.00003)
 rotation = -0.0029737893
 scale = Vector2(1.039822, 0.9692925)
 energy = 0.56
