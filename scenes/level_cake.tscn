@@ -26,6 +26,7 @@ position = Vector2(53.333336, 174.66667)
 position = Vector2(335, 169)
 
 [node name="Door" parent="." index="5" unique_id=1002253811]
+visible = false
 position = Vector2(98, 194)
 
 [node name="light" parent="." index="6" unique_id=424952006]

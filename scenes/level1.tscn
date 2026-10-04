@@ -539,7 +539,7 @@ color = 5
 position = Vector2(159, 310)
 
 [node name="fusebox_lightblue" parent="." unique_id=1538294224 instance=ExtResource("3_conm7")]
-position = Vector2(324, 125)
+position = Vector2(325, 125)
 
 [node name="wind_lightblue" parent="." unique_id=1657574721 instance=ExtResource("5_u3awl")]
 position = Vector2(240, 307)
@@ -554,7 +554,7 @@ position = Vector2(160, 205)
 color = 3
 
 [node name="fusebox_pink2" parent="." unique_id=774036604 instance=ExtResource("3_conm7")]
-position = Vector2(335, 45)
+position = Vector2(335, 46)
 color = 3
 
 [node name="wind_pink" parent="." unique_id=1079342545 instance=ExtResource("5_u3awl")]
@@ -564,7 +564,7 @@ color = 3
 wind_force = Vector2(0, -1400)
 
 [node name="door_pink" parent="." unique_id=171665495 instance=ExtResource("9_conm7")]
-position = Vector2(232, 137)
+position = Vector2(232, 136)
 color = 3
 active = false
 
