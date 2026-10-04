@@ -10,6 +10,7 @@ extends Node2D
 @onready var fusebox_green: Area2D = $fusebox_green
 @onready var door_green: Area2D = $Door
 @onready var start_voice_line: AudioStreamPlayer2D = $start_voice_line
+@onready var musik: AudioStreamPlayer2D = $musik
 
 var purple_count = 0
 
@@ -17,7 +18,8 @@ var purple_count = 0
 func _ready() -> void:
 	#voice line 
 	start_voice_line.play()
-
+	musik.play()
+	
 	# light blue
 	fusebox_lightblue.fuse_on.connect(wind_lightblue.turn_on)
 	fusebox_lightblue.fuse_off.connect(wind_lightblue.turn_off)
