@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://cne4k6rdpgb4u"]
 
 [ext_resource type="Texture2D" uid="uid://bj7u8sddisms3" path="res://assets/images/animated/button.png" id="1_mi6dp"]
-[ext_resource type="Script" uid="uid://dw4wbo338avoc" path="res://scenes/button.gd" id="1_rhj8v"]
+[ext_resource type="Script" uid="uid://dw4wbo338avoc" path="res://scripts/button.gd" id="1_rhj8v"]
+[ext_resource type="AudioStream" uid="uid://brf82v4dmidk6" path="res://assets/sounds/button.wav" id="3_3q610"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u2cai"]
 radius = 9.974486
@@ -23,6 +24,9 @@ vframes = 12
 position = Vector2(0, -2.0000002)
 rotation = 4.700014
 shape = SubResource("CapsuleShape2D_u2cai")
+
+[node name="sound" type="AudioStreamPlayer2D" parent="." unique_id=6778359]
+stream = ExtResource("3_3q610")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

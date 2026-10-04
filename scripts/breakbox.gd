@@ -5,6 +5,9 @@ extends Area2D
 
 @onready var interactable: Area2D = $Interactable
 @onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var sound: AudioStreamPlayer2D = $sound
+
+
 var sig = 0
 signal fuse_on(sig)
 signal fuse_off(sig)
@@ -28,7 +31,9 @@ func _on_interact():
 func turn_on():
 	active = true
 	sprite_2d.frame_coords.x = int(active)
+	sound.play()
 
 func turn_off():
 	active = false
 	sprite_2d.frame_coords.x = int(active)
+	sound.play()
