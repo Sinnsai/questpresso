@@ -3,6 +3,7 @@ extends Area2D
 @export_enum("Light Blue", "Purple", "Yellow", "Pink", "Blue", "Black", "Green", "Gray", "Orange", "White", "Red", "Bronze") var color: int
 signal button_pressed
 signal button_released
+@onready var sound: AudioStreamPlayer2D = $sound
 
 var player1 = false
 var player2 = false
@@ -24,11 +25,13 @@ func _on_body_entered(body: Node2D) -> void:
 		player1 = true
 		if !player2:
 			sprite_2d.frame_coords.x = 1
+			sound.play()
 			button_pressed.emit()
 	elif body.is_in_group("player2"):
 		player2 = true
 		if !player1:
 			sprite_2d.frame_coords.x = 1
+			sound.play()
 			button_pressed.emit()
 
 
