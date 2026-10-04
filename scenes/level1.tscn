@@ -540,7 +540,6 @@ position = Vector2(324, 125)
 [node name="wind_lightblue" parent="." unique_id=1657574721 instance=ExtResource("5_u3awl")]
 position = Vector2(240, 307)
 length_in_tiles = 6
-wind_force = Vector2(0, -1000)
 
 [node name="door_lightblue" parent="." unique_id=1797549063 instance=ExtResource("9_conm7")]
 position = Vector2(216, 297)
@@ -687,5 +686,7 @@ shape = SubResource("RectangleShape2D_mbagn")
 [node name="voice_line1" type="AudioStreamPlayer2D" parent="." unique_id=1575931684]
 stream = ExtResource("12_2ku1j")
 bus = &"voice_lines"
+
+[node name="start_voice" type="AudioStreamPlayer2D" parent="." unique_id=777091502]
 
 [connection signal="body_entered" from="voice_trigger" to="." method="_on_voice_trigger_body_entered"]
