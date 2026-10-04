@@ -44,5 +44,8 @@ func _physics_process(delta: float) -> void:
 	elif direction == -1.0:
 		animated_sprite_2d.flip_h = true
 
-func set_wind_force(force: Vector2) -> void:
-	current_wind_force = force
+func add_wind_force(force: Vector2) -> void:
+	current_wind_force += force
+
+func remove_wind_force(force: Vector2) -> void:
+	current_wind_force -= force

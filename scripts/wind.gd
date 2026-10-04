@@ -2,7 +2,7 @@ extends Area2D
 
 @export_range(1,20,1) var length_in_tiles: int
 @export_enum("Light Blue", "Purple", "Yellow", "Pink", "Blue", "Black", "Green", "Gray", "Orange", "White", "Red", "Bronze") var color: int
-@export var wind_force: Vector2 = Vector2(200, 0)
+@export var wind_force: Vector2 = Vector2(0, -1000)
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var fan: Sprite2D = $fan
@@ -40,11 +40,11 @@ func turn_off():
 
 func _on_body_entered(body: Node2D) -> void: 
 	if(body.is_in_group("player") and has_energy): 
-		if body.has_method("set_wind_force"):
-			body.set_wind_force(wind_force)
+		if body.has_method("add_wind_force"):
+			body.add_wind_force(wind_force)
 
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		if body.has_method("set_wind_force"):
-			body.set_wind_force(Vector2.ZERO)
+		if body.has_method("remove_wind_force"):
+			body.remove_wind_force(wind_force)
