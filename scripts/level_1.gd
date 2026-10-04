@@ -15,8 +15,11 @@ extends Node2D
 @onready var door_orange: StaticBody2D = $door_orange
 @onready var fusebox_yellow: Area2D = $fusebox_yellow
 @onready var door_yellow: StaticBody2D = $door_yellow
+@onready var door_yellow_2: StaticBody2D = $door_yellow2
 @onready var button_blue: Area2D = $button_blue
 @onready var wind_blue: Area2D = $wind_blue
+@onready var fusebox_black: Area2D = $fusebox_black
+@onready var door: Area2D = $Door
 
 
 # Called when the node enters the scene tree for the first time.
@@ -59,10 +62,16 @@ func _ready() -> void:
 	# yellow
 	fusebox_yellow.fuse_on.connect(door_yellow.turn_on)
 	fusebox_yellow.fuse_off.connect(door_yellow.turn_off)
+	fusebox_yellow.fuse_on.connect(door_yellow_2.turn_on)
+	fusebox_yellow.fuse_off.connect(door_yellow_2.turn_off)
 	
 	# blue
 	button_blue.button_pressed.connect(wind_blue.turn_on)
 	button_blue.button_released.connect(wind_blue.turn_off)
+	
+	# black / door
+	fusebox_black.fuse_off.connect(door.open_door)
+	fusebox_black.fuse_on.connect(door.close_door)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

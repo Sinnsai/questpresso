@@ -9,3 +9,4 @@
 visible = false
 
 [node name="level1" parent="." unique_id=2110850906 instance=ExtResource("2_0wfyh")]
+scale = Vector2(2, 2)
