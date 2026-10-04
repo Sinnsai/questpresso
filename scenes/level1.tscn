@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dh13cq0smx5kf" path="res://scenes/light.tscn" id="10_d3jkd"]
 [ext_resource type="Texture2D" uid="uid://c5rdq14ateclj" path="res://assets/images/animated/2d_lights_and_shadows_neutral_point_light.webp" id="11_u3awl"]
 [ext_resource type="AudioStream" uid="uid://dpooy7nux6726" path="res://assets/sounds/IQ.mp3" id="12_2ku1j"]
+[ext_resource type="AudioStream" uid="uid://bqup2vviybxy" path="res://assets/sounds/Zeit.mp3" id="13_f31uk"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2ku1j"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -688,5 +689,6 @@ stream = ExtResource("12_2ku1j")
 bus = &"voice_lines"
 
 [node name="start_voice" type="AudioStreamPlayer2D" parent="." unique_id=777091502]
+stream = ExtResource("13_f31uk")
 
 [connection signal="body_entered" from="voice_trigger" to="." method="_on_voice_trigger_body_entered"]

@@ -17,8 +17,7 @@ var purple_count = 0
 func _ready() -> void:
 	#voice line 
 	start_voice_line.play()
-	
-	
+
 	# light blue
 	fusebox_lightblue.fuse_on.connect(wind_lightblue.turn_on)
 	fusebox_lightblue.fuse_off.connect(wind_lightblue.turn_off)

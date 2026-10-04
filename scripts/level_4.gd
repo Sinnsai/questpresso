@@ -15,6 +15,7 @@ extends Node2D
 @onready var fusebox_pink: Area2D = $fusebox_pink
 @onready var door_bronze: Area2D = $Door
 @onready var first_voice_line: AudioStreamPlayer2D = $first_voice_line
+@onready var to_long: AudioStreamPlayer2D = $to_long
 
 var player1 = false
 var player2 = false
@@ -53,7 +54,7 @@ func _ready() -> void:
 	# pink
 	fusebox_pink.fuse_on.connect(door_pink.open_door)
 	fusebox_pink.fuse_off.connect(door_pink.close_door)
-
+	to_long_in_level()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -69,3 +70,8 @@ func _on_door_pink_body_entered(body: Node2D) -> void:
 func _on_door_body_entered(body: Node2D) -> void:
 		if body.is_in_group("player") and door_bronze.open:
 			player2 = true
+
+
+func to_long_in_level() -> void:
+	await get_tree().create_timer(45).timeout
+	to_long.play()

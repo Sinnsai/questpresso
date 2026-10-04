@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cne4k6rdpgb4u" path="res://scenes/button.tscn" id="3_rbbjd"]
 [ext_resource type="PackedScene" uid="uid://csvnn005yrf7o" path="res://scenes/door.tscn" id="4_wom6i"]
 [ext_resource type="AudioStream" uid="uid://s4deh4w5b3op" path="res://assets/sounds/XXXXXL.mp3" id="8_yk4f3"]
+[ext_resource type="AudioStream" uid="uid://6huoixlaq5lp" path="res://assets/sounds/Liebe.mp3" id="9_yk4f3"]
 
 [node name="level4" unique_id=2110850906 instance=ExtResource("1_huvaw")]
 scale = Vector2(2, 2)
@@ -121,6 +122,9 @@ color = 3
 [node name="first_voice_line" type="AudioStreamPlayer2D" parent="." index="25" unique_id=1020704490]
 stream = ExtResource("8_yk4f3")
 bus = &"voice_lines"
+
+[node name="to_long" type="AudioStreamPlayer2D" parent="." index="26" unique_id=1949290340]
+stream = ExtResource("9_yk4f3")
 
 [connection signal="body_entered" from="Door" to="." method="_on_door_body_entered"]
 [connection signal="body_entered" from="door_pink" to="." method="_on_door_pink_body_entered"]

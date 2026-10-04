@@ -21,12 +21,17 @@ extends Node2D
 @onready var fusebox_black: Area2D = $fusebox_black
 @onready var door: Area2D = $Door
 @onready var voice_line_1: AudioStreamPlayer2D = $voice_line1
+@onready var start_voice: AudioStreamPlayer2D = $start_voice
 
 var lightblue_count = 0
 var voice_line = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	start_voice.play()
+	
+	
 	# light blue
 	button_lightblue.button_pressed.connect(lightblue_plus)
 	button_lightblue.button_released.connect(lightblue_minus)
